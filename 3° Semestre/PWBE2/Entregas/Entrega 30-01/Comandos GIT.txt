@@ -1,0 +1,14 @@
+git config --global user.name "leandrosaltorato"
+git config --global user.email "saltoratojuniorleandro@gmail.com"
+
+//clonar repositório
+git clone https://github.com/leandrosaltorato/SENAI_DES.git
+
+//Atualizar repositório WEB 
+git add . //Adiciona as alterações
+git commit -m "comentário" //Valida as alteraçoes feitas
+git push //Enviar as alterações
+
+
+//Atualizar repositório local
+git pull
