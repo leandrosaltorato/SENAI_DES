@@ -1,0 +1,16 @@
+//express cors mysql2 dotenv
+//npm install express ou npm i express
+npm i express cors dotenv prisma @prisma/client
+
+
+npm i nodemon
+npx nodemon
+
+
+nppm i prisma
+npm install @prisma/cliente
+
+npx prisma init --datasource-provider mysql
+
+
+npx prisma migrate dev
