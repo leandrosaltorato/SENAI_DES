@@ -1,6 +1,6 @@
 //express cors mysql2 dotenv
 //npm install express ou npm i express
-npm i express cors dotenv prisma @prisma/client
+npm i express cors dotenv prisma @prisma/client @prisma/adapter-mariadb
 
 
 npm i nodemon
@@ -8,9 +8,55 @@ npx nodemon
 
 
 nppm i prisma
-npm install @prisma/cliente
+npm install @prisma/client
 
 npx prisma init --datasource-provider mysql
 
-
 npx prisma migrate dev
+
+npx prisma generate
+
+
+
+
+
+
+
+//PACKAGE.JSON: Para não precisar instalar nodemon, escrever no scripts
+
+"dev": "node --watch server.js"
+
+//no terminal
+npm run dev
+
+
+
+///SERVER.JS 
+
+require("dotenv").config();
+
+const express = require("express");
+const cors = require("cors");
+
+const app = express();
+
+app.use(express.json());
+app.use(cors());
+
+/*Importar rotas e aplica-las*/
+
+app.listen(process.env.PORT_APP, () => {
+    console.log("Online na porta" + process.env.PORT_APP);
+});
+
+
+//PRISMA.JS
+
+const { PrismaClient } = require("@prisma/client");
+const { PrismaMariaDb } = require("@prisma/adapter-mariadb");
+
+const adapter = new PrismaMariaDb(process.env.DATABASE_URL);
+
+const prisma = new PrismaClient({ adapter });
+
+module.exports = prisma;
