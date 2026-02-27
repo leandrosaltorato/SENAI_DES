@@ -18,16 +18,13 @@ model Carros {
   marca String
   modelo String
   ano Int
-  clientes     Clientes[]
 }
 
 model Clientes {
   id        Int    @id @default(autoincrement())
   nome      String
-  cpf       Int
+  cpf       String
   email     String
   cnh       String
-  carros   Carros @relation(fields: [carrosId], references: [id])
-  carrosId Int
 }
 
