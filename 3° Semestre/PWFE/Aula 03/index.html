@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>Locadora Filmes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Loja - Cadastro de Filme</h1>
+        <div class="header-actions">
+            <select id="filtro" onchange="filtrar()">
+                <option value="todos">Todos</option>
+                <option value="Fantasia">Fantasia</option>
+                <option value="Ação">Ação</option>
+                <option value="Terror">Terror</option>
+            </select>
+
+            <button onclick="abrirModal()">+ Novo Filme</button>
+        </div>
+    </header>
+    <main>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Imagem</th>
+                    <th>Gênero</th>
+                    <th>Nome</th>
+                    <th>Ano</th>
+                    <th>Autor</th>
+                    <th>Açoes</th>
+                </tr>
+            </thead>
+            <tbody id="dados"></tbody>
+        </table>
+    </main>
+    <!--Criar Modal-->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>Novo Filme</h2>
+            <input type="text" id="genero" placeholder="Gênero">
+            <input type="text" id="nome" placeholder="Nome">
+            <input type="date" id="ano" placeholder="Ano de Lançamento">
+            <input type="text" id="autor" placeholder="Autor">
+            <input type="text" id="imagem" placeholder="Url da imagem">
+
+            <div class="modal-buttons">
+                <button onclick="salvarFilme()">Salvar</button>
+                <button onclick="fecharModal()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
